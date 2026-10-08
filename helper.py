@@ -48,12 +48,11 @@ def vectorizer(ds):
 def get_prediction(vectorized_text):
     prediction = model.predict(vectorized_text)
 
-    print("================================")
-    print("RAW PREDICTION:", prediction)
-    print("VECTOR SHAPE:", vectorized_text.shape)
-    print("================================")
+    
 
-    if prediction == 1:
+
+
+    if prediction[0] == 1:
         return 'negative'
     else:
         return 'positive'

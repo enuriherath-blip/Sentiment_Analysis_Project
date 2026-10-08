@@ -31,15 +31,20 @@ def my_post():
     preprocessed_txt = preprocessing(text)
     logging.info(f'Preprocessed Text : {preprocessed_txt}')
 
+    
+
+
     vectorized_txt = vectorizer(preprocessed_txt)
     logging.info(f'Vectorized Text : {vectorized_txt}')
 
     prediction = get_prediction(vectorized_txt)
     logging.info(f'Prediction : {prediction}')
 
+    print("PREDICTION:", prediction)
+
     if prediction == 'negative':
         global negative
-        negative += 1
+        negative += 1 
     else:
         global positive
         positive += 1
